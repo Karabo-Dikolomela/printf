@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	int (*function)(va_list, char *, unsigned int);
 	char *buffer;
 
-	va_start(arg, format), buffer = malloc(sizeof(char) * 1024);
+	va_start(args, format), buffer = malloc(sizeof(char) * 1024);
 	if (!format || !buffer || (format[x] == '%' && !format[x + 1]))
 		return (-1);
 	if (!format[x])
@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 				}
 				else
 				{
-					len += function(arguments, buffer, ibuf);
+					len += function(args, buffer, ibuf);
 					x += ev_print_func(format, x + 1);
 				}
 			} x++;
@@ -47,6 +47,6 @@ int _printf(const char *format, ...)
 			hand1_buf(buffer, format[x], ibuf), len++;
 		for (ibuf = len; ibuf > 1024; ibuf -= 1024)
 			;
-	} print_buf(buffer, ibuf), free(buffer), va_end(arguments);
+	} print_buf(buffer, ibuf), free(buffer), va_end(args);
 	return (len);
 }
