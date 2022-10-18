@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	int (*function)(va_list, char *, unsigned int);
 	char *buffer;
 
-	va_start(arg, format), buffer = malloc(sizeof(char) * 1024);
+	va_start(args, format), buffer = malloc(sizeof(char) * 1024);
 	if (!format || !buffer || (format[x] == '%' && !format[x + 1]))
 		return (-1);
 	if (!format[x])
