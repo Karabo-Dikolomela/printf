@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 				}
 				else
 				{
-					len += function(arguments, buffer, ibuf);
+					len += function(args, buffer, ibuf);
 					x += ev_print_func(format, x + 1);
 				}
 			} x++;
@@ -47,6 +47,6 @@ int _printf(const char *format, ...)
 			hand1_buf(buffer, format[x], ibuf), len++;
 		for (ibuf = len; ibuf > 1024; ibuf -= 1024)
 			;
-	} print_buf(buffer, ibuf), free(buffer), va_end(arguments);
+	} print_buf(buffer, ibuf), free(buffer), va_end(args);
 	return (len);
 }
