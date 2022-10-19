@@ -23,22 +23,20 @@ int _printf(const char *format, ...)
 		if (format[x] == '%')
 		{
 			if (format[x + 1] == '\0')
-			{
-				print_buf(buffer, ibuf), free(buffer), va_end(args);
+			{ print_buf(buffer, ibuf), free(buffer), va_end(args);
 				return (-1);
 			}
 			else
 			{
 				function = get_print_func(format, x + 1);
-				if (fucntion == NULL)
+				if (function == NULL)
 				{
 					if (format[x + 1] == ' ' && !format[x + 2])
 						return (-1);
 					hand1_buf(buffer, format[x], ibuf), len++, x--;
 				}
 				else
-				{
-					len += function(args, buffer, ibuf);
+				{ len += function(args, buffer, ibuf);
 					x += ev_print_func(format, x + 1);
 				}
 			} x++;
