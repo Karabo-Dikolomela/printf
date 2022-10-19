@@ -17,8 +17,8 @@ int _printf(const char *format, ...)
 	if (!format || !buffer || (format[x] == '%' && !format[x + 1]))
 		return (-1);
 	if (!format[x])
-		return (-1);
-	for (x = 0; format && format[x]; i++)
+		return (0);
+	for (x = 0; format && format[x]; x++)
 	{
 		if (format[x] == '%')
 		{
