@@ -23,7 +23,7 @@ int _printf(const char *format, ...);
 int ev_print_func(const char *s, int index)
 unsigned int handl_buf(char *buf, char c, unsigned int ibuf);
 int print_buf(char *buf, unsigned int nbuf);
-char *binary_array(char *binary, long int int_in, int isneg, int limit);
+char *binary_array(char *binary, long int inp, int isneg, int limit);
 char *oct_array(char *bnr, char *oct);
 char *long_oct_array(char *bnr, char *oct);
 char *short_oct_array(char *bnr, char *oct);
