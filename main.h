@@ -56,6 +56,6 @@ int prinnhex(va_list arguments, char *buf, unsigned int ibuf);
 int prinnupx(va_list arguments, char *buf, unsigned int ibuf);
 int prinhupx(va_list arguments, char *buf, unsigned int ibuf);
 int prinsint(va_list arguments, char *buf, unsigned int ibuf);
-int (*get_print_func(const char *s, int index);
+int (*get_print_func(const char *s, int index));
 
 #endif
